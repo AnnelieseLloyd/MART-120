@@ -20,5 +20,7 @@
   font-family: sans-serif;
 }
 .secondpg {
-  background: url(images/background.jpg);
+  background: url(images/gray.jpg);
+  text-align: center;
+  align: center;
 }
