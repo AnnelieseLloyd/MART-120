@@ -1,0 +1,26 @@
+.hobbies {
+  font-size: 18px;
+  color: Blue;
+  font-family: monospace;
+}
+.food {
+  font-size: 18px;
+  color: purple;
+  font-family: fantasy;
+}
+#websites {
+  font-size: 18px;
+  color: pink;
+  font-family: cursive;
+}
+#myID {
+  font-size: 18px;
+  font-weight: bold;
+  color: blue;
+  font-family: sans-serif;
+}
+.secondpg {
+  background: url(images/gray.png);
+  text-align: center;
+  align: center;
+}
