@@ -1,19 +1,15 @@
-// x and y for my character
-var characterX = 100;
+// x and y for character
+var characterX = 200;
 var characterY = 100;
-// define the key codes for each letter
-var w = 87;
-var s = 83;
-var a = 65;
-var d = 68;
+
 
 // x and y for a shape
-var shapeX = 30;
-var shapeY = 50;
+var shapeX = 50;
+var shapeY = 60;
 var shapeXSpeed;
 var shapeYSpeed;
 
-// creating 2 shapse when the mouse is clicked
+// creating 2 shapes when the mouse is clicked
 var mouseShapeX;
 var mouseShapeY;
 var mouseSquareL;
@@ -22,8 +18,8 @@ function setup()
     createCanvas(600, 600);
     // get a random speed when the it first starts
 
-    shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-    shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 2);
+    shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 2);
 }
 
 function draw()
@@ -51,40 +47,42 @@ function draw()
     text("EXIT", width-50,height-50)
 
     //character
-    fill(23,40,123);
+    fill(23,140,123);
     circle(characterX,characterY,25);
 
     // handle the keys
-    if(keyIsDown(w))
+
+    if(keyCode === DOWN_ARROW)
     {
-        characterY -= 10;
+        characterY += 5;
     }
-    if(keyIsDown(s))
+    if(keyCode === UP_ARROW)
     {
-        characterY += 10;
+        characterY -= 5;
     }
-    if(keyIsDown(a))
+    if(keyCode === LEFT_ARROW)
     {
-        characterX -= 10;
+        characterX -= 5;
     }
-    if(keyIsDown(d))
+    if(keyCode === RIGHT_ARROW)
     {
-        characterX += 10;
+        characterX += 5;
     }
 
-    // potential enemy
+
+    // circle enemy
     fill(200,200,96);
     // draw the shape
     circle(shapeX, shapeY, 10);
 
      // get a random speed when the it first starts
-     shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+     shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 4);
      shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
 
     // move the shape
     shapeX += shapeXSpeed;
     shapeY += shapeYSpeed;
-    // check to see if the shape has gone out of bounds
+    // check to see if the shape is out of bounds
     if(shapeX > width)
     {
         shapeX = 0;
@@ -102,13 +100,13 @@ function draw()
         shapeY = height;
     }
 
-    // check to see if the character has left the exit
+    // check to see if the character won
     if(characterX > width && characterY > width-50)
     {
         fill(0);
         stroke(5);
         textSize(26);
-        text("You Win!", width/2-50, height/2-50);
+        text("You Won the Game!", width/2-50, height/2-50);
     }
 
     // create the shape based on the mouse click
@@ -126,19 +124,3 @@ function mouseClicked()
     mouseShapeY = mouseY;
     mouseShapeL = 30
 }
-/*
-function keyPressed() {
-    if (keyCode === LEFT_ARROW) {
-        characterX -= 10;
-    }
-    else if (keyCode === RIGHT_ARROW) {
-        characterX += 10;
-    }
-    else if (keyCode === UP_ARROW) {
-        characterY -= 10;
-    }
-    else if (keyCode === DOWN_ARROW) {
-        characterY += 10;
-    }
-  }
-  */
