@@ -26,8 +26,8 @@ function setup()
     createCanvas(600, 600);
     // call function random speed when the it first starts
     rectangleObject = new Rectangle(100,200,10,50,120,35,200);
-    rectangleObject2 = new Rectangle(200,35,20,59,23,420,34);
-    rectangleObject3 = new Rectangle(35,703,45,32,456,23,120);
+    rectangleObject2 = new Rectangle(200,350,10,59,23,420,34);
+    rectangleObject3 = new Rectangle(350,703,10,52,456,23,120);
     //random movement
     random();
 
