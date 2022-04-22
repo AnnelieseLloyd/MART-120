@@ -18,12 +18,16 @@ var mouseSquareL;
 
 //calling rect.js
 var rectangleObject;
+var rectangleObject2;
+var rectangleObject3;
 
 function setup()
 {
     createCanvas(600, 600);
     // call function random speed when the it first starts
     rectangleObject = new Rectangle(100,200,10,50,120,35,200);
+    rectangleObject2 = new Rectangle(200,35,20,59,23,420,34);
+    rectangleObject3 = new Rectangle(35,703,45,32,456,23,120);
     //random movement
     random();
 
@@ -40,7 +44,10 @@ function draw()
     // call border function
     borders();
 
-
+    //displaying rectangle
+    rectangleObject.display();
+    rectangleObject2.display();
+    rectangleObject3.display();
 
 
 
@@ -208,6 +215,3 @@ function random()
   shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 2);
 
 }
-
-//displaying rectangle
- rectangleObject.display();
