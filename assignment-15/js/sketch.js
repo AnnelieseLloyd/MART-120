@@ -6,8 +6,8 @@ var characterY = 100;
 // x and y for a shape
 var shapeX = 50;
 var shapeY = 60;
-var shapeXSpeed;
-var shapeYSpeed;
+//var shapeXSpeed;
+//var shapeYSpeed;
 
 //array
 var shapeXs = [];
