@@ -9,14 +9,12 @@ var shapeY = 60;
 //var shapeXSpeed;
 //var shapeYSpeed;
 
-//array
 var shapeXs = [];
 var shapeYs = [];
 var diameters = [];
 
 var shapeXSpeeds = [];
 var shapeYSpeeds = [];
-
 
 // creating 2 shapes when the mouse is clicked
 var mouseShapeX;
@@ -31,20 +29,19 @@ var rectangleObject3;
 function setup()
 {
     createCanvas(600, 600);
+
+        for (var i = 0; i < 5; i++) {
+            shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+            shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+            shapeXs[i] = random(200);
+            shapeYs[i] = random(300);
+            diameters[i] = random(30);
+        }
     // call function random speed when the it first starts
     rectangleObject = new Rectangle(100,200,10,50,120,35,200);
     rectangleObject2 = new Rectangle(200,350,10,59,23,420,34);
     rectangleObject3 = new Rectangle(350,703,10,52,456,23,120);
     //random movement
-    random();
-    // get a random speed when the it first starts
- for (var i = 0; i < 60; i++) {
-     shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 4);
-     shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 4);
-     shapeXs[i] = getRandomNumber(300);
-     shapeYs[i] = getRandomNumber(500);
-     diameters[i] = getRandomNumber(20);
- }
 
 }
 //calling rectangle made in seperate pg
@@ -63,7 +60,30 @@ function draw()
     rectangleObject.display();
     rectangleObject2.display();
     rectangleObject3.display();
+    //array
+    for (var i = 0; i < shapeXs.length; i++) {
+        circle(shapeXs[i], shapeYs[i], diameters[i]);
+        shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+        shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
 
+
+        // move the shape
+        shapeXs[i] += shapeXSpeeds[i];
+        shapeYs[i] += shapeYSpeeds[i];
+
+        // check to see if the shape has gone out of bounds
+        if (shapeXs[i] > width) {
+            shapeXs[i] = 0;
+        }
+        if (shapeXs[i] < 0) {
+            shapeXs[i] = width;
+        }
+        if (shapeYs[i] > height) {
+            shapeYs[i] = 0;
+        }
+        if (shapeYs[i] < 0) {
+            shapeYs[i] = height;
+        }
 
 
   //function text
@@ -85,7 +105,7 @@ charactermovement();
 enemy();
 
      // call a random speed when the it first starts and move shape
-xandyshapespeedsandmovement();
+//xandyshapespeedsandmovement();
     // call shape is out of bounds
 outofbounds();
 
@@ -99,42 +119,13 @@ mouseclickshapes();
 }
      // function a random speed when the it first starts and move shape
 //function xandyshapespeedsandmovement()
-{
+//{
 // function get a random speed when the it first starts
-
-//shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 4);
 //shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
 
 // move the shape
-
-//shapeX += shapeXSpeed;
 //shapeY += shapeYSpeed;
 }
-// draw the shape array
-  for (var i = 0; i < shapeXs.length; i++) {
-      circle(shapeXs[i], shapeYs[i], diameters[i]);
-      shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 4);
-      shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 4);
-
-
-
-
-      // move the shape
-      shapeXs[i] += shapeXSpeeds[i];
-      shapeYs[i] += shapeYSpeeds[i];
-      // check to see if the shape has gone out of bounds
-      if (shapeXs[i] > width) {
-          shapeXs[i] = 0;
-      }
-      if (shapeXs[i] < 0) {
-          shapeXs[i] = width;
-      }
-      if (shapeYs[i] > height) {
-          shapeYs[i] = 0;
-      }
-      if (shapeYs[i] < 0) {
-          shapeYs[i] = height;
-      }
   // function shape is out of bounds
 function outofbounds()
 {
@@ -180,19 +171,19 @@ function charactermovement()
 
       if(keyCode === DOWN_ARROW)
       {
-          characterY += 5;
+          characterY += 1;
       }
       if(keyCode === UP_ARROW)
       {
-          characterY -= 5;
+          characterY -= 1;
       }
       if(keyCode === LEFT_ARROW)
       {
-          characterX -= 5;
+          characterX -= 1;
       }
       if(keyCode === RIGHT_ARROW)
       {
-          characterX += 5;
+          characterX += 1;
       }
 }
   //function buld enemy circle
@@ -253,7 +244,7 @@ function random()
 {
   // get a random speed when the it first starts
 
-  shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 2);
-  shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 2);
+  shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 1)) + 1);
+  shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 1)) + 1);
 
 }
