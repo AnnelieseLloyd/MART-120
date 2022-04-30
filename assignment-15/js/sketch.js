@@ -38,12 +38,12 @@ function setup()
     //random movement
     random();
     // get a random speed when the it first starts
- for (var i = 0; i < 50; i++) {
-     shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-     shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-     shapeXs[i] = getRandomNumber(500);
-     shapeYs[i] = getRandomNumber(600);
-     diameters[i] = getRandomNumber(30);
+ for (var i = 0; i < 60; i++) {
+     shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 4);
+     shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 4);
+     shapeXs[i] = getRandomNumber(300);
+     shapeYs[i] = getRandomNumber(500);
+     diameters[i] = getRandomNumber(20);
  }
 
 }
@@ -110,11 +110,11 @@ mouseclickshapes();
 //shapeX += shapeXSpeed;
 //shapeY += shapeYSpeed;
 }
-// draw the shape
+// draw the shape array
   for (var i = 0; i < shapeXs.length; i++) {
       circle(shapeXs[i], shapeYs[i], diameters[i]);
-      shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
-      shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+      shapeXSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 4);
+      shapeYSpeeds[i] = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 4);
 
 
 
