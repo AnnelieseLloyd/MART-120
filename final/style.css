@@ -1,0 +1,89 @@
+*{
+    background: #eacff5;
+    text-align: center;
+}
+.inline-block{
+    text-align: center;
+    background-color: #eacff5;
+
+
+}
+.videos{
+    background: #e0adf5;
+
+}
+.contact{
+    text-align: center;
+    font-family: cursive;
+    font-style: italic;
+}
+.contact-info{
+    text-align: center;
+}
+.name,.email,.more,.help{
+    font-size: 24px;
+    background: #b9c5ee
+}
+.basic-forms{
+    background:#b9c5ee ;
+}
+.image{
+    text-align: center;
+}
+.internship{
+    text-align: left;
+}
+h4{
+    background: #e0adf5;
+}
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+  /* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.right{
+    text-align: right;
+}
+.left{
+    text-align: left;
+}
+*{
+    text-size-adjust: large;
+
+}
+h2{
+    text-size-adjust: large;
+    background-color: rgb(240, 181, 161);
+    font-family: cursive,fantasy;
+    font-weight: lighter;
+}
+img{
+    width: auto;
+    max-height: 100;
+}
+@font-face {
+    font-family: 'Sofia';
+    src: url(./fonts/Sofia/Sofia-Regular.ttf) format('Truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+h1{
+    font-family:  'Sofia', cursive;
+    src: local("./fonts/Sofia/Sofia-Regular.ttf") format('Truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-size: xx-large;
+ }
+ pre{
+     font-size: large;
+     font-family: sans-serif, 'Times New Roman', Times, serif;
+ }
